@@ -10,7 +10,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text className="bg-black font-bold text-xl text-red-600 w-full h-full">nativewind setup</Text>
+      {/* <Text className="bg-black font-bold text-xl text-red-600 w-full h-full">nativewind setup</Text> */}
       <Link href='/sign-in'>Sign-In</Link>
       <Link href='/explore'>Explore</Link>
       <Link href='/profile'>Profile</Link>
