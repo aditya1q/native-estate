@@ -20,7 +20,7 @@ const Search = () => {
             </View>
 
             <TouchableOpacity>
-                <Image source={icons.filter} className='size-5'/>
+                <Image source={icons.filter} className='size-5' />
             </TouchableOpacity>
         </View>
     )
