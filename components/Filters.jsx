@@ -1,13 +1,7 @@
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
 import { categories } from '@/constants/data';
 
-const Filters = () => {
-    const [selectedCategory, setSelectedCategory] = useState('All');
-
-    const handleCategoryPress = (category) => {
-        setSelectedCategory(category);
-    };
+const Filters = ({ selectedCategory, handleCategoryPress }) => {
 
     return (
         <ScrollView

@@ -64,3 +64,43 @@ export const RegularCards = ({ data }) => {
         </TouchableOpacity>
     )
 };
+
+export const ExploreCard = ({ data }) => {
+    return (
+        <TouchableOpacity className="flex flex-row w-full gap-4 mt-4 px-3 py-4 rounded-lg bg-white shadow-lg shadow-black-100/70 items-center">
+            <View className="relative">
+                {/* Rating Overlay */}
+                <View className="flex flex-row items-center absolute top-2 left-16 bg-white/90 px-2 py-1 rounded-full z-50">
+                    <Image source={icons.star} className="w-5 h-5" />
+                    <Text className="text-xs font-rubik-bold text-primary-300 ml-1">
+                        {data.rating}
+                    </Text>
+                </View>
+
+                {/* Image */}
+                <Image source={images.japan} className="w-32 h-32 rounded-lg" />
+            </View>
+
+            {/* Title and Price Section */}
+            <View className="flex flex-row mt-2 w-full">
+                {/* Title and Price Row */}
+                <View className="flex flex-col items-start gap-2 w-[60%]">
+                    <Text className="text-lg font-rubik-bold text-black-300">
+                        {data.title}
+                    </Text>
+                    <Text className="text-sm font-rubik text-black-200">
+                        {data.location}
+                    </Text>
+                    <View className='flex flex-row w-full justify-between'>
+                        <Text className="text-lg font-rubik-bold text-primary-300 w-[90%]">
+                            {data.price}
+                        </Text>
+                        <Image source={icons.heart} className="w-5 h-5" tintColor="#191d31" />
+                    </View>
+                </View>
+
+            </View>
+        </TouchableOpacity>
+
+    )
+}
