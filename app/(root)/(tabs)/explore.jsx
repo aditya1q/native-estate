@@ -1,16 +1,17 @@
 import { useState } from "react";
 import { Text, View, FlatList, Image, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { router } from "expo-router";
 // constant
 import { cards } from "@/constants/data";
+import icons from "@/constants/icons";
 // component
-import { ExploreCard, RegularCards } from "@/components/Cards";
+import { ExploreCard } from "@/components/Cards";
 import Search from "@/components/Search";
 import Filters from "@/components/Filters";
-import icons from "@/constants/icons";
-import { router } from "expo-router";
 
 export default function explore() {
+
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredRegularCards =
@@ -18,13 +19,28 @@ export default function explore() {
       cards :
       cards.filter((card) => card.category === selectedCategory)
 
+  const handleCardPress = (data) => {
+    router.push({
+      pathname: `/properties/${data?.id}`,
+      params: {
+        title: data?.title,
+        location: data?.location,
+        rating: data?.rating,
+        image: data?.image,
+        category: data?.category,
+        price: data?.price
+        // Add more fields as needed
+      },
+    });
+  };
+
+
   return (
     <SafeAreaView className="bg-white h-full">
-      {/* there are regular card */}
       <FlatList
         data={filteredRegularCards}
         renderItem={({ item }) => (
-          <ExploreCard data={item} />
+          <ExploreCard data={item} onPress={() => handleCardPress(item)} />
         )}
         keyExtractor={(item) => item.id.toString()}
         numColumns={1}

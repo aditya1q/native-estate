@@ -7,11 +7,7 @@ import { useRouter } from 'expo-router';
 
 const signIn = () => {
   const router = useRouter();
-
-  const handleLogin = () => {
-    router.push('/');
-  };
-
+  
   return (
     <SafeAreaView className='bg-white h-full'>
       <ScrollView contentContainerStyle={{
@@ -34,7 +30,7 @@ const signIn = () => {
           </Text>
 
           <TouchableOpacity
-            onPress={handleLogin}
+            onPress={() => router.push('/')}
             className="bg-white shadow-md shadow-zinc-300 rounded-full w-full py-4 mt-5"
           >
             <View className="flex flex-row items-center justify-center">
