@@ -9,44 +9,27 @@ import icons from "@/constants/icons";
 import { ExploreCard } from "@/components/Cards";
 import Search from "@/components/Search";
 import Filters from "@/components/Filters";
+import NoResults from "@/components/NoResult";
+// utils
+import { handleCardPress } from "@/utils/navigation";
+import { filterCardsByCategory } from "@/utils/filterCards";
 
 export default function explore() {
-
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const filteredRegularCards =
-    selectedCategory === 'All' ?
-      cards :
-      cards.filter((card) => card.category === selectedCategory)
-
-  const handleCardPress = (data) => {
-    router.push({
-      pathname: `/properties/${data?.id}`,
-      params: {
-        title: data?.title,
-        location: data?.location,
-        rating: data?.rating,
-        image: data?.image,
-        category: data?.category,
-        price: data?.price
-        // Add more fields as needed
-      },
-    });
-  };
-
+  const filteredRegularCards = filterCardsByCategory(cards, selectedCategory);
 
   return (
     <SafeAreaView className="bg-white h-full">
       <FlatList
         data={filteredRegularCards}
         renderItem={({ item }) => (
-          <ExploreCard data={item} onPress={() => handleCardPress(item)} />
+          <ExploreCard data={item} onPress={() => handleCardPress(item, router)} />
         )}
         keyExtractor={(item) => item.id.toString()}
         numColumns={1}
         contentContainerClassName='pb-32'
         showsVerticalScrollIndicator={false}
-
         // header component
         ListHeaderComponent={
           <View className="px-5">
@@ -64,8 +47,10 @@ export default function explore() {
               selectedCategory={selectedCategory}
               handleCategoryPress={(category) => setSelectedCategory(category)}
             />
-            {/* <ExploreCard /> */}
             <Text className='text-black-300 font-rubik-bold text-2xl'>Found {filteredRegularCards.length} Apartments</Text>
+            {filteredRegularCards.length === 0 && (
+              <NoResults message="No recommendations found." />
+            )}
           </View>
         }
       />

@@ -2,7 +2,6 @@ import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { categories } from '@/constants/data';
 
 const Filters = ({ selectedCategory, handleCategoryPress }) => {
-
     return (
         <ScrollView
             horizontal

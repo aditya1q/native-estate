@@ -5,7 +5,7 @@ export const cards = [
   // All (Includes all categories)
   { id: 1, title: "Luxury Villa", location: "Malibu, CA", price: "$5000", rating: 4.9, category: "Villa", image: images.japan },
   { id: 2, title: "Modern Apartment", location: "Downtown LA, CA", price: "$2500", rating: 4.6, category: "Apartments", image: images.Kuwait },
-  { id: 3, title: "Beachside Condo", location: "Santa Monica, CA", price: "$3500", rating: 4.8, category: "Condos", image: images.LA },
+  { id: 3, title: "Beachside Condo", location: "Santa Monica, CA", price: "$3500", rating: 4.8, category: "House", image: images.LA },
   { id: 4, title: "Cozy Townhome", location: "Pasadena, CA", price: "$1500", rating: 4.4, category: "Townhomes", image: images.SF },
 
   // Houses
@@ -15,10 +15,10 @@ export const cards = [
   { id: 8, title: "Countryside House", location: "Napa Valley, CA", price: "$3200", rating: 4.7, category: "House", image: images.SF },
 
   // Condos
-  { id: 9, title: "Luxury Condo", location: "Miami Beach, FL", price: "$4200", rating: 4.9, category: "Condos", image: images.newYork },
-  { id: 10, title: "City View Condo", location: "Seattle, WA", price: "$3100", rating: 4.6, category: "Condos", image: images.SF },
-  { id: 11, title: "Penthouse Condo", location: "Chicago, IL", price: "$6000", rating: 4.8, category: "Condos", image: images.UK },
-  { id: 12, title: "Cozy Condo", location: "Boston, MA", price: "$2500", rating: 4.4, category: "Condos", image: images.LA },
+  // { id: 9, title: "Luxury Condo", location: "Miami Beach, FL", price: "$4200", rating: 4.9, category: "Condos", image: images.newYork },
+  // { id: 10, title: "City View Condo", location: "Seattle, WA", price: "$3100", rating: 4.6, category: "Condos", image: images.SF },
+  // { id: 11, title: "Penthouse Condo", location: "Chicago, IL", price: "$6000", rating: 4.8, category: "Condos", image: images.UK },
+  // { id: 12, title: "Cozy Condo", location: "Boston, MA", price: "$2500", rating: 4.4, category: "Condos", image: images.LA },
 
   // Duplexes
   { id: 13, title: "Modern Duplex", location: "Austin, TX", price: "$2900", rating: 4.7, category: "Duplexes", image: images.ST },
@@ -67,7 +67,7 @@ export const featuredCards = [
     location: "Midtown, Atlanta",
     price: "$1200",
     rating: 4.6,
-    image: images.newYork,
+    image: images.LA,
     category: "flat",
   },
   {
@@ -76,7 +76,7 @@ export const featuredCards = [
     location: "Malibu Beach, California",
     price: "$5000",
     rating: 4.9,
-    image: images.japan,
+    image: images.SF,
     category: "villa",
   },
   {
@@ -85,7 +85,7 @@ export const featuredCards = [
     location: "Dubai Marina, UAE",
     price: "$8000",
     rating: 4.7,
-    image: images.LA,
+    image: images.Kuwait,
     category: "apartment",
   },
   {

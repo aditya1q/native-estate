@@ -1,11 +1,11 @@
 import { Image, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import { useState } from 'react'
 import images from '@/constants/images';
 import icons from '@/constants/icons';
 
-export const FeaturedCards = ({ data }) => {
+export const FeaturedCards = ({ data, onPress }) => {
     return (
-        <TouchableOpacity className='flex flex-col items-start w-60 h-80 relative'>
+        <TouchableOpacity onPress={onPress} className='flex flex-col items-start w-60 h-80 relative'>
             <Image source={data.image} className='size-full relative rounded-2xl' />
             <Image source={images.cardGradient} className='size-full absolute bottom-0 rounded-2xl' />
 
@@ -34,9 +34,10 @@ export const FeaturedCards = ({ data }) => {
     )
 };
 
-export const RegularCards = ({ data }) => {
+export const RegularCards = ({ data, onPress }) => {
+
     return (
-        <TouchableOpacity className='flex flex-1 w-full mt-4 px-3 py-4 rounded-lg bg-white
+        <TouchableOpacity onPress={onPress} className='flex flex-1 w-full mt-4 px-3 py-4 rounded-lg bg-white
          shadow-lg shadow-black-100/70 relative'>
 
             <View className='flex flex-row items-center absolute px-2 top-5 right-5 bg-white/90 p-1 rounded-full z-50'>
